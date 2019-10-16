@@ -6,7 +6,7 @@ const resolve = dir => {
 
 module.exports = {
   publicPath: './',
-  // productionSourceMap: true,
+  productionSourceMap: false,
   configureWebpack: {
     devServer: {
       disableHostCheck: true
