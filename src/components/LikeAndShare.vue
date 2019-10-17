@@ -1,7 +1,7 @@
 <template>
-    <div class="like-share plr16">
+    <div class="like-share">
         <div class="button">
-            <i class="icon-like"></i><span>57.4w</span>
+            <i class="icon-like"></i><span>{{likes|toThousandsFormatter}}</span>
         </div>
         <div class="button">
             <i class="icon-share"></i><span>分享</span>
@@ -11,7 +11,16 @@
 
 <script>
 export default {
-  name: 'like-and-share'
+  name: 'like-and-share',
+  props: {
+    shareId: {
+      type: [Number, String]
+    },
+    likes: {
+      type: Number,
+      required: true
+    }
+  }
 }
 </script>
 <style scoped lang="stylus">

@@ -2,23 +2,32 @@
     <div class="comment-item">
         <div class="user-info">
             <img src="../../assets/icon_user.png" class="user-img">
-            <span class="user-name">张勇</span>
+            <span class="user-name">{{commnt.name}}</span>
         </div>
         <div class="pl40">
-            <p class="content">评论不分先后，共通谋求发展，伟大的中国共产党万岁，实现伟大复兴而奋斗！</p>
+            <p class="content">{{commnt.content}}</p>
             <div class="comment-time">
-                <span class="time">10-10</span>
+                <span class="time">{{commnt.time}}</span>
                 <span>·回复</span>
             </div>
             <div class="split-solid-line"/>
         </div>
         <div class="like">
-            <span class="like-count">2.7万</span>
+            <span class="like-count">{{commnt.likes|toThousandsFormatter}}</span>
             <i class="icon-like"></i>
         </div>
     </div>
 </template>
-
+<script>
+export default {
+  props: {
+    commnt: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
 <style scoped lang="stylus">
 .comment-item
     position: relative

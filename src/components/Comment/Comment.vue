@@ -1,9 +1,8 @@
 <template>
-    <div class="comment-wrapper plr16">
+    <div class="comment-wrapper">
         <h1 class="title">观点</h1>
         <div class="comment-list">
-           <comment-item/>
-           <comment-item/>
+           <comment-item v-for="(item,index) in comments" :key="index" :commnt="item"/>
         </div>
         <comment-input class="input"/>
     </div>
@@ -11,7 +10,13 @@
 
 <script>
 export default {
-  name: 'comment'
+  name: 'comment',
+  props: {
+    comments: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 <style scoped lang="stylus">
